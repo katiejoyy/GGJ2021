@@ -1,0 +1,20 @@
+{
+	"nodes": [
+		{
+			"speaker": "Bin",
+			"nodeName": "Begin",
+			"dialogueText": "Are you really talking to a bin...?",
+			"nextNodes": [ "Second" ],
+			"optionDialogueText": [],
+			"nodeTags": [ "pink" ]
+		},
+		{
+			"speaker": "Bin",
+			"nodeName": "Second",
+			"dialogueText": "Look can you fuck off?",
+			"nextNodes": ["END"],
+			"optionDialogueText": [],
+			"nodeTags": ["green"]
+		}
+	]
+}
