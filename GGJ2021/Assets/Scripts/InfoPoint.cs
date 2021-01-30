@@ -7,7 +7,6 @@ public class InfoPoint : MonoBehaviour
 	Conversation conversation;
 	public TextAsset conversation_text;
 
-	// Use this for initialization
 	void Start ()
 	{
 		conversation = new Conversation
