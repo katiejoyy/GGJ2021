@@ -7,15 +7,13 @@ public class InfoPoint : MonoBehaviour
 	Conversation conversation;
 	public TextAsset conversation_text;
 
-	void Start ()
+    void Start ()
 	{
-		conversation = new Conversation
+        conversation = new Conversation
 		{
 			dialogueManager = FindObjectOfType<DialogueManager>().gameObject
 		};
 		conversation.LoadConversation(conversation_text);
-
-        BeginConversation();
 	}
 
 	public void BeginConversation()
