@@ -1,0 +1,12 @@
+{
+	"nodes": [ 
+		{
+			"speaker": "Bin",
+			"nodeName": "Begin",
+			"dialogueText": "Are you really talking to a bin...?",
+			"nextNodes": ["END"],
+			"optionDialogueText": [],
+			"nodeTags": ["green"]
+		}
+	]
+}
