@@ -11,7 +11,15 @@
 		{
 			"speaker": "Bin",
 			"nodeName": "Second",
-			"dialogueText": "Look can you fuck off?",
+			"dialogueText": "Fine. Well look. I think I saw your dog go off somewhere in the park.",
+			"nextNodes": ["Third"],
+			"optionDialogueText": [],
+			"nodeTags": ["green"]
+		},
+		{
+			"speaker": "Bin",
+			"nodeName": "Third",
+			"dialogueText": "Banjo right? Just keep walking. You'll find him eventually.",
 			"nextNodes": ["END"],
 			"optionDialogueText": [],
 			"nodeTags": ["green"]
