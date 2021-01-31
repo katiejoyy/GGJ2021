@@ -714,6 +714,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d31565c7b80a54496dae211cf81efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstDuration: 0.7
+  scaleBackDuration: 0
+  endScale: {x: 1, y: 1, z: 1}
+  extraScale: {x: 0.2, y: 0.2, z: 0.2}
 --- !u!114 &7058121532828376171
 MonoBehaviour:
   m_ObjectHideFlags: 0
