@@ -24,24 +24,24 @@ public class ScaleUp : MonoBehaviour
 
     IEnumerator IncreaseScale()
     {
-        float timeThroughAnim = (Time.time - startTime)/firstDuration;
-        Vector3 firstEndPoint = endScale + extraScale;
-        while(timeThroughAnim <= 1)
+        float timeThroughAnim = 0;
+        Vector3 firstEndPoint = endScale + (extraScale * (scaleBackDuration > 0 ? 1 : 0));
+        while (timeThroughAnim <= 1)
         {
-            transform.localScale = Vector3.Slerp(startScale, firstEndPoint, timeThroughAnim);
-            yield return new WaitForFixedUpdate();
             timeThroughAnim = (Time.time - startTime) / firstDuration;
+            transform.localScale = Vector3.Slerp(startScale, firstEndPoint, Mathf.Min(1, timeThroughAnim));
+            yield return new WaitForFixedUpdate();
         }
 
         if (scaleBackDuration > 0)
         {
             startTime = Time.time;
-            timeThroughAnim = (Time.time - startTime) / scaleBackDuration;
+            timeThroughAnim = 0;
             while (timeThroughAnim <= 1)
             {
-                transform.localScale = Vector3.Slerp(firstEndPoint, endScale, timeThroughAnim);
-                yield return new WaitForFixedUpdate();
                 timeThroughAnim = (Time.time - startTime) / scaleBackDuration;
+                transform.localScale = Vector3.Slerp(firstEndPoint, endScale, Mathf.Min(1, timeThroughAnim));
+                yield return new WaitForFixedUpdate();
             }
         }
         

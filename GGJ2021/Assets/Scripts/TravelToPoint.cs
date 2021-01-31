@@ -24,24 +24,24 @@ public class TravelToPoint : MonoBehaviour
 
     IEnumerator MoveToPoint()
     {
-        float timeThroughAnim = (Time.time - startTime) / firstDuration;
-        Vector3 firstEndPoint = endPosition + extraMovement;
+        float timeThroughAnim = 0;
+        Vector3 firstEndPoint = endPosition + (extraMovement * (scaleBackDuration>0 ? 1 : 0));
         while (timeThroughAnim <= 1)
         {
-            transform.position = Vector3.Slerp(startPosition, firstEndPoint, timeThroughAnim);
-            yield return new WaitForFixedUpdate();
             timeThroughAnim = (Time.time - startTime) / firstDuration;
+            transform.position = Vector3.Slerp(startPosition, firstEndPoint, Mathf.Min(1, timeThroughAnim));
+            yield return new WaitForFixedUpdate();
         }
 
         if(scaleBackDuration > 0)
         {
             startTime = Time.time;
-            timeThroughAnim = (Time.time - startTime) / scaleBackDuration;
+            timeThroughAnim = 0;
             while (timeThroughAnim <= 1)
             {
-                transform.position = Vector3.Slerp(firstEndPoint, endPosition, timeThroughAnim);
-                yield return new WaitForFixedUpdate();
                 timeThroughAnim = (Time.time - startTime) / scaleBackDuration;
+                transform.position = Vector3.Slerp(firstEndPoint, endPosition, Mathf.Min(1, timeThroughAnim));
+                yield return new WaitForFixedUpdate();
             }
         }
 
